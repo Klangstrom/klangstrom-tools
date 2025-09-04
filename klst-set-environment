@@ -1,0 +1,12 @@
+#! /bin/zsh
+
+KLST_READ_ELF="/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.macos64_1.0.0.202111181127/tools/bin/arm-none-eabi-readelf"
+
+alias lsusb="ioreg -p IOUSB -w0 | sed 's/[^o]*o //; s/@.*$//' | grep -v '^Root.*'"
+alias llusb="ioreg -p IOUSB"
+alias klst_sheep_upload_sketch="arduino-cli compile -b klangstrom:stm32:Klangstrom:pnum=KLST_SHEEP -u -p . "
+alias klst_core_upload_sketch="arduino-cli compile -b klangstrom:stm32:Klangstrom:pnum=KLST_CORE -u -p . "
+alias klst_tiny_upload_sketch="arduino-cli compile -b klangstrom:stm32:Klangstrom:pnum=KLST_TINY -u -p . "
+alias klst_sdl_upload_sketch="arduino-cli compile -b klangstrom:desktop:sdl:OSC=disable,board=KLST_SHEEP -u -p . "
+alias klst_usb_device_midi_hack="cp $KLANGSTROM/git/klangstrom/klangstrom/platforms/klangstrom-arduino/stm32/libraries/USBDevice/src/* $KLANGSTROM/git/klangstrom/klangstrom/platforms/klangstrom-arduino/stm32/cores/arduino/"
+# alias klst_sheep_upload_usb_device_midi="arduino-cli compile -b klangstrom:stm32:Klangstrom:pnum=KLST_SHEEP,usb=DEVICE_MIDI -u -p . "
