@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-KLST_ARDUINO_REPO=../klangstrom-arduino # run from within `klangstrom-arduino` repository
+KLST_REPO=../klangstrom-arduino # run from within repository
 
-cd $KLST_ARDUINO_REPO
+cd $KLST_REPO
 git fetch klib
 git subtree pull --prefix=libraries klib main --squash
 git push
