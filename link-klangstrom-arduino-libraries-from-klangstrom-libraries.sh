@@ -2,9 +2,11 @@
 
 # TODO WIP this is macOS only for now
 
-SRC="../klangstrom-libraries"
+SCRIPT_PATH="$(cd "$(dirname "$0")" && pwd)"
+
+SRC="$SCRIPT_PATH/../klangstrom-libraries"
 DST="$HOME/Documents/Arduino/libraries"
 echo
 echo "linking libraries from '$SRC' into '$DST'"
 echo 
-./link_libraries.sh klangstrom-libraries.config $SRC $DST
+"$SCRIPT_PATH/link_libraries.sh" "$SCRIPT_PATH/klangstrom-libraries.config" $SRC $DST
